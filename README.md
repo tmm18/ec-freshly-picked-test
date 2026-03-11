@@ -14,11 +14,10 @@ laravel環境構築
 
 開発環境
 ・商品一覧画面 : http://localhost/products
-
+・phpmyadmin　: http://localhost:8080/
 
 使用技術(実行環境)
 ・PHP 8.1.34
 ・Lalavel 8.83.8
 ・MySQL 8.0.26
 ・nginx 1.21.1
-・

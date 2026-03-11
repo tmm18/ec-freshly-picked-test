@@ -1,0 +1,113 @@
+.detail {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.detail-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.detail-title {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.detail-title a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+.detail-content {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.detail-left {
+    width: 45%;
+}
+
+.detail-image img {
+    width: 100%;
+    display: block;
+}
+
+.detail-right {
+    width: 55%;
+}
+
+.detail-group {
+    margin-bottom: 24px;
+}
+
+.detail-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.detail-input {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.detail-season {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.detail-description-area {
+    margin-top: 20px;
+}
+
+.description {
+    width: 100%;
+    height: 180px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    resize: none;
+}
+
+.information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.back-button {
+    display: inline-block;
+    background: #d4d4d4;
+    text-decoration: none;
+    color: black;
+    padding: 15px 30px;
+}
+
+.form-update {
+    color: black;
+    background: #f0a43a;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-delete button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
+}

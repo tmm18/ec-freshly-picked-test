@@ -15,4 +15,7 @@ use App\Http\Controllers\ProductsController;
 */
 
 Route::get('/products',[ProductsController::class,'index']);
-Route::post('/products/search', [ProductsController::class, 'search']);
+Route::get('/products/search', [ProductsController::class, 'search']);
+Route::get('/products/detail/{product}', [ProductsController::class, 'show']);
+Route::patch('/products/{product}/update', [ProductsController::class, 'update']);
+Route::delete('/products/{product}/delete', [ProductsController::class, 'destroy']);

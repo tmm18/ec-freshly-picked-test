@@ -3,34 +3,64 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Request\ProductRequest;
 
 
 class ProductsController extends Controller
 {
-public function index()
-{
-        $products = Product::all();
-    return view('products',compact('products'));
-}
+    public function index()
+    {
+        $products = Product::paginate(6);
 
-public function search(Request $request)
-{
-    $query = Product::query();
+        return view('products', compact('products'));
 
-    if(!empty($request->keyword)){
-        $query->where('name','like','%'.$request->keyword.'%');
     }
 
-    if(!empty($request->sort)){
-        $query->orderBy('price',$request->sort);
+    public function search(Request $request)
+    {
+        $query = Product::query();
+
+        if (!empty($request->keyword)) {
+            $query->where('name', 'like', '%' . $request->keyword . '%');
+        }
+
+        if (!empty($request->sort)) {
+            $query->orderBy('price', $request->sort);
+        }
+
+        $products = $query->paginate(6)->withQueryString();
+
+        return view('products', compact('products'));
+
     }
 
-    $products = $query->get();
 
-    return view('products',compact('products'));
-}
-$products=$query->paginate(6);
+    public function show (Product $product)
+    {
+        return view('detail', compact('product'));
+    }
 
-returm view('products',compact('products'));
+    public function update(Request $request, Product $product)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|integer',
+            'description' => 'required',
+        ]);
 
+        $product->update([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+        ]);
+
+        return redirect('/products');
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        return redirect('/products');
+    }
 }
